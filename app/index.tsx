@@ -1,11 +1,7 @@
-import { Text, View } from "react-native";
+import { Redirect } from "expo-router";
 
 const App = () => {
-  return (
-    <View>
-      <Text>Hello, World!</Text>
-    </View>
-  );
+  return <Redirect href="./categories" />;
 };
 
 export default App;

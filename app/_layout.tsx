@@ -1,8 +1,7 @@
-import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { Slot, SplashScreen } from "expo-router";
 import React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 
 export default function RootLayout() {
@@ -18,11 +17,13 @@ export default function RootLayout() {
   }, [fontsLoaded, error]);
 
   return (
-    <ThemeProvider value={DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <GestureHandlerRootView
+      style={{
+        flex: 1,
+        paddingHorizontal: 12,
+      }}
+    >
+      <Slot />
+    </GestureHandlerRootView>
   );
 }
