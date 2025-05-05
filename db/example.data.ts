@@ -1,0 +1,77 @@
+import { ActivityType } from "@/core/models/activity-list.model";
+
+export const ACTIVITIES: ActivityType[] = [
+  {
+    id: 1,
+    assistants: 13,
+    association: "GENT",
+    category: "games",
+    city: "Barcelona",
+    time: new Date(),
+    title: "Jocs de taula",
+    description:
+      "Vine a jugar a jocs de taula amb nosaltres! Tindrem una selecció de jocs per a tots els gustos i nivells. No cal portar res, només les ganes de passar-ho bé!",
+  },
+  {
+    id: 2,
+    assistants: 7,
+    category: "sports",
+    city: "Barcelona",
+    time: new Date(),
+    title: "Caminata",
+    description:
+      "Uneix-te a nosaltres per a una caminada pel parc! És una gran oportunitat per fer exercici i conèixer gent nova. Tots els nivells són benvinguts!",
+  },
+  {
+    id: 3,
+    assistants: 4,
+    category: "social",
+    city: "Esplugues de Llobregat",
+    time: new Date(),
+    title: "Bailem swing",
+    description:
+      "Vine a gaudir d'una classe de swing! No cal experiència prèvia, només ganes de ballar i passar-ho bé. Tindrem música en viu i un ambient molt acollidor.",
+  },
+  {
+    id: 4,
+    assistants: 11,
+    association: "GENT",
+    category: "sports",
+    city: "Sant Just Desvern",
+    time: new Date(),
+    title: "Trobada en el parc",
+    description:
+      "Uneix-te a nosaltres per a una trobada esportiva al parc! Farem jocs i activitats per a totes les edats. És una gran oportunitat per fer nous amics i gaudir de la natura.",
+  },
+  {
+    id: 5,
+    assistants: 8,
+    category: "social",
+    city: "Barcelona",
+    time: new Date(),
+    title: "Prenem un café",
+    description:
+      "Vine a prendre un cafè amb nosaltres! És una gran oportunitat per conèixer gent nova i fer nous amics. Tindrem un ambient molt acollidor i relaxat.",
+  },
+  {
+    id: 6,
+    assistants: 13,
+    association: "GENT",
+    category: "games",
+    city: "Barcelona",
+    time: new Date(),
+    title: "Jocs de taula",
+    description:
+      "Vine a jugar a jocs de taula amb nosaltres! Tindrem una selecció de jocs per a tots els gustos i nivells. No cal portar res, només les ganes de passar-ho bé!",
+  },
+  {
+    id: 7,
+    assistants: 7,
+    category: "sports",
+    city: "Barcelona",
+    time: new Date(),
+    title: "Caminata",
+    description:
+      "Uneix-te a nosaltres per a una caminada pel parc! És una gran oportunitat per fer exercici i conèixer gent nova. Tots els nivells són benvinguts!",
+  },
+];

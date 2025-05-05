@@ -1,4 +1,4 @@
-import { Category } from "../pods/categories/categories.model";
+import { Category } from "../core/models/categories.model";
 
 export const CATEGORIES: Category[] = [
   {

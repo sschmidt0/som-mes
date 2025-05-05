@@ -1,4 +1,5 @@
 import { Icon } from "@/components/atoms/tab-bar-icon";
+import { NewActivityButton } from "@/components/molecules/new-activity-button";
 import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
 import { useDrawerStore } from "@/store/drawer.store";
 import { Stack, useRouter } from "expo-router";
@@ -41,6 +42,7 @@ const StackLayout = () => {
         name="activity-list"
         options={{
           title: "Activity List",
+          headerRight: () => <NewActivityButton />,
         }}
       />
     </Stack>

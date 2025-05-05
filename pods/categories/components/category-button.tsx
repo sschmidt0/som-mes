@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { CUSTOM_COLORS } from "@/constants/Colors";
-import { Category } from "../categories.model";
+import { Category } from "../../../core/models/categories.model";
 
 export type CategoryButtonProps = Category & {
   customStyles?: string;
