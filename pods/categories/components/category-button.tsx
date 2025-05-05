@@ -2,17 +2,18 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Link } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
+import { CUSTOM_COLORS } from "@/constants/Colors";
 import { Category } from "../categories.model";
 
 export type CategoryButtonProps = Category & {
-  squareSize: number;
+  customStyles?: string;
 };
 
 export const CategoryButton: React.FC<CategoryButtonProps> = ({
   id,
+  customStyles,
   icon,
   longText,
-  squareSize,
   shortText,
   title,
 }) => {
@@ -29,12 +30,13 @@ export const CategoryButton: React.FC<CategoryButtonProps> = ({
         },
       }}
       asChild
+      style={[styles.link, customStyles && ""]}
     >
       <Pressable style={({ pressed }) => pressed && styles.pressed}>
-        <View
-          style={[styles.container, { width: squareSize, height: squareSize }]}
-        >
-          <MaterialIcons name={icon} size={30} />
+        <View style={styles.container}>
+          <View style={styles.icon}>
+            <MaterialIcons name={icon} size={50} />
+          </View>
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
@@ -43,27 +45,41 @@ export const CategoryButton: React.FC<CategoryButtonProps> = ({
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    justifyContent: "center",
+  link: {
     width: "100%",
-    // backgroundColor: Colors.primary100,
+  },
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+    padding: 12,
+    backgroundColor: CUSTOM_COLORS.primary100,
     borderRadius: 24,
-    padding: 6,
-    marginHorizontal: 8,
-    marginVertical: 2,
+    borderWidth: 1,
+    borderColor: CUSTOM_COLORS.primary500,
+    shadowColor: "#000", // Sombra ligera
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   pressed: {
     opacity: 0.75,
   },
-  title: {
-    width: "100%",
-    marginVertical: 4,
-    fontSize: 20,
-    textAlign: "center",
-    textTransform: "uppercase",
+  icon: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    backgroundColor: CUSTOM_COLORS.primary500,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  text: {
-    fontStyle: "italic",
+  title: {
+    width: "80%",
+    marginRight: 40,
+    fontSize: 20,
+    textTransform: "uppercase",
+    color: CUSTOM_COLORS.primary900,
+    fontWeight: "bold",
   },
 });
