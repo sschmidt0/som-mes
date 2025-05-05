@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { CATEGORIES } from "./categories.business";
+import { CATEGORIES } from "../../db/categories";
 import { CategoryButton } from "./components/category-button";
 
 export const CategoriesComponent = () => {
@@ -30,5 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center",
     gap: 12,
+    marginVertical: 8,
   },
 });

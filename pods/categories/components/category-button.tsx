@@ -34,10 +34,23 @@ export const CategoryButton: React.FC<CategoryButtonProps> = ({
     >
       <Pressable style={({ pressed }) => pressed && styles.pressed}>
         <View style={styles.container}>
-          <View style={styles.icon}>
-            <MaterialIcons name={icon} size={50} />
+          <View style={styles.upperInnerContainer}>
+            <View style={styles.icon}>
+              <MaterialIcons name={icon} size={50} />
+            </View>
+            <Text style={styles.title}>{title}</Text>
           </View>
-          <Text style={styles.title}>{title}</Text>
+          <View>
+            <Text
+              style={{
+                color: CUSTOM_COLORS.primary900,
+                fontSize: 14,
+                textAlign: "left",
+              }}
+            >
+              {shortText}
+            </Text>
+          </View>
         </View>
       </Pressable>
     </Link>
@@ -49,9 +62,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 16,
+    gap: 8,
     padding: 12,
     backgroundColor: CUSTOM_COLORS.primary100,
     borderRadius: 24,
@@ -62,6 +73,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
+  },
+  upperInnerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
   },
   pressed: {
     opacity: 0.75,
