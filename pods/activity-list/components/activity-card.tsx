@@ -15,21 +15,25 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   return (
     <Link
       href={{
-        pathname: "/",
+        pathname: `/(tabs)/(drawer)/(stack)/activity/[id]`,
         params: {
           id: activity?.id,
           assistants: activity?.assistants,
           association: activity?.association,
-          category: activity?.category,
+          categoryTitle: activity?.categoryTitle,
           city: activity?.city,
+          icon: activity?.icon,
           time: formatDateTime(activity?.time),
           title: activity?.title,
+          description: activity?.description,
         },
       }}
       asChild
       style={styles.container}
     >
-      <Pressable style={({ pressed }) => [pressed && styles.pressed]}>
+      <Pressable
+        style={({ pressed }) => [styles.container, pressed && styles.pressed]}
+      >
         <View style={styles.textContainer}>
           <Text style={styles.title}>{activity.title}</Text>
           {activity?.association && (

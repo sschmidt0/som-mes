@@ -1,7 +1,7 @@
+import { ProminentIcon } from "@/components/atoms/prominent-icon";
 import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
 import { Category } from "@/core/models/categories.model";
 import { ACTIVITIES } from "@/db/example.data";
-import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
@@ -20,7 +20,7 @@ export const ActivityListComponent = () => {
   } as Category;
 
   const filteredActivities = ACTIVITIES.filter(
-    (activity) => activity.category === category.id
+    (activity) => activity.icon === category.id
   );
 
   const hasActivities = filteredActivities.length > 0;
@@ -35,13 +35,7 @@ export const ActivityListComponent = () => {
     <ScrollView contentContainerStyle={styles.parentContainer}>
       <Text style={styles.subtitle}>{category.shortText}</Text>
       <View style={styles.upperContainer}>
-        <MaterialIcons
-          style={styles.icon}
-          name={category.icon}
-          size={80}
-          color={CUSTOM_COLORS.primary800}
-        />
-
+        <ProminentIcon name={category.icon} />
         <Text style={styles.description}>{category.longText}</Text>
       </View>
 

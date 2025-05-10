@@ -1,12 +1,11 @@
-import { Icon } from "@/components/atoms/tab-bar-icon";
-import CustomDrawer from "@/components/molecules/custom-drawer";
+import { Icon } from "@/components/atoms/icon";
 import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
 import { Drawer } from "expo-router/drawer";
 
 const DrawerLayout = () => {
   return (
     <Drawer
-      drawerContent={CustomDrawer}
+      // drawerContent={CustomDrawer}
       screenOptions={{
         headerShown: false,
         overlayColor: COLORS.overlayColor,

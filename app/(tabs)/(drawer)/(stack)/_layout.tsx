@@ -1,4 +1,4 @@
-import { Icon } from "@/components/atoms/tab-bar-icon";
+import { Icon } from "@/components/atoms/icon";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
 import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
 import { useDrawerStore } from "@/store/drawer.store";

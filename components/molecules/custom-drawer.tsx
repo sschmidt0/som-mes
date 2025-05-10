@@ -8,7 +8,8 @@ import {
 } from "@react-navigation/drawer";
 import { usePathname } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
-const CustomDrawer = (props: DrawerContentComponentProps) => {
+
+export const CustomDrawer = (props: DrawerContentComponentProps) => {
   const path = usePathname();
   const isDrawerPath = isPathInDrawerPaths(path);
 
@@ -67,7 +68,6 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
     </DrawerContentScrollView>
   );
 };
-export default CustomDrawer;
 
 const styles = StyleSheet.create({
   container: {

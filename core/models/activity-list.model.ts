@@ -10,7 +10,8 @@ export interface ActivityType {
   id: number;
   assistants: number;
   association?: string;
-  category: string;
+  categoryTitle: string;
+  icon: CategoryType;
   city: string;
   time: Date;
   title: string;
