@@ -25,11 +25,12 @@ export default function RootLayout() {
       }}
     >
       <CheckMapsPermissionsProvider>
-        <Stack screenOptions={{ headerShown: false }}>
+        <Stack>
           <Stack.Screen
             name="(tabs)"
             options={{
               title: "Categories",
+              headerShown: false,
               headerRight: () => <NewActivityButton />,
             }}
           />
@@ -38,6 +39,12 @@ export default function RootLayout() {
             options={{
               headerShown: false,
               presentation: "modal",
+            }}
+          />
+          <Stack.Screen
+            name="map"
+            options={{
+              headerShown: false,
             }}
           />
         </Stack>

@@ -1,5 +1,7 @@
-import { StyleSheet, View } from "react-native";
-import MapView, { Region } from "react-native-maps";
+import { barcelonaRegion } from "@/core/initial-region";
+import { useRouter } from "expo-router";
+import { Pressable, StyleSheet, View } from "react-native";
+import MapView from "react-native-maps";
 
 export interface CumstomMapProps {
   latitude?: number;
@@ -10,20 +12,21 @@ export const CustomMap: React.FC<CumstomMapProps> = ({
   latitude = 41.3851,
   longitude = 2.1734,
 }) => {
-  const barcelonaRegion: Region = {
-    latitude,
-    longitude,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01,
+  const router = useRouter();
+
+  const handleOnMapClick = () => {
+    router.push("/map");
   };
 
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        provider="google"
-        initialRegion={barcelonaRegion}
-      />
+      <Pressable onPress={handleOnMapClick}>
+        <MapView
+          style={styles.map}
+          provider="google"
+          initialRegion={barcelonaRegion}
+        />
+      </Pressable>
     </View>
   );
 };

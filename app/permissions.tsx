@@ -21,4 +21,5 @@ const PermissionsScreen = () => {
     </View>
   );
 };
+
 export default PermissionsScreen;
