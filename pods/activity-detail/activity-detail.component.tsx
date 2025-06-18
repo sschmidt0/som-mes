@@ -31,7 +31,7 @@ export const ActivityDetailComponent: React.FC<Props> = () => {
         {!!activity?.association && (
           <Association association={activity?.association} />
         )}
-        <CustomMap latitude={0} longitude={0} />
+        <CustomMap />
         <Text style={styles.title}>{activity.title}</Text>
 
         <InfoBox

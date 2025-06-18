@@ -2,17 +2,17 @@ import { StyleSheet, View } from "react-native";
 import MapView, { Region } from "react-native-maps";
 
 export interface CumstomMapProps {
-  latitude: number;
-  longitude: number;
+  latitude?: number;
+  longitude?: number;
 }
 
 export const CustomMap: React.FC<CumstomMapProps> = ({
-  latitude,
-  longitude,
+  latitude = 41.3851,
+  longitude = 2.1734,
 }) => {
   const barcelonaRegion: Region = {
-    latitude: latitude || 41.3851,
-    longitude: longitude || 2.1734,
+    latitude,
+    longitude,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };

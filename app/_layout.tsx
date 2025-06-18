@@ -1,5 +1,6 @@
+import { NewActivityButton } from "@/components";
 import { useFonts } from "expo-font";
-import { Slot, SplashScreen } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
@@ -22,7 +23,22 @@ export default function RootLayout() {
         flex: 1,
       }}
     >
-      <Slot />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            title: "Categories",
+            headerRight: () => <NewActivityButton />,
+          }}
+        />
+        <Stack.Screen
+          name="new-activity"
+          options={{
+            headerShown: false,
+            presentation: "modal",
+          }}
+        />
+      </Stack>
     </GestureHandlerRootView>
   );
 }
