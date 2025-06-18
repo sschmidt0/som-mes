@@ -1,4 +1,5 @@
 import { NewActivityButton } from "@/components";
+import CheckMapsPermissionsProvider from "@/core/providers/check-maps-permissions.provider";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import React from "react";
@@ -23,22 +24,24 @@ export default function RootLayout() {
         flex: 1,
       }}
     >
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen
-          name="(tabs)"
-          options={{
-            title: "Categories",
-            headerRight: () => <NewActivityButton />,
-          }}
-        />
-        <Stack.Screen
-          name="new-activity"
-          options={{
-            headerShown: false,
-            presentation: "modal",
-          }}
-        />
-      </Stack>
+      <CheckMapsPermissionsProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen
+            name="(tabs)"
+            options={{
+              title: "Categories",
+              headerRight: () => <NewActivityButton />,
+            }}
+          />
+          <Stack.Screen
+            name="new-activity"
+            options={{
+              headerShown: false,
+              presentation: "modal",
+            }}
+          />
+        </Stack>
+      </CheckMapsPermissionsProvider>
     </GestureHandlerRootView>
   );
 }
