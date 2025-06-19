@@ -1,5 +1,5 @@
 import { Icon } from "@/components/atoms/icon";
-import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
+import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -12,12 +12,17 @@ export interface InfoBoxProps {
 export const InfoBox: React.FC<InfoBoxProps> = ({ assistants, city, time }) => {
   return (
     <View style={styles.infoBox}>
-      <Text style={styles.city}>{city}</Text>
-      <Text style={styles.time}>{time}</Text>
-
-      <View style={styles.assistantsBox}>
-        <Icon name="person" color={CUSTOM_COLORS.primary300} />
-        <Text style={styles.assistantText}>{`${assistants} assistiran`}</Text>
+      <View style={styles.iconTextLine}>
+        <Icon name="location" color={CUSTOM_COLOURS.orangeCoral} />
+        <Text style={styles.infoText}>{city}</Text>
+      </View>
+      <View style={styles.iconTextLine}>
+        <Icon name="calendar" color={CUSTOM_COLOURS.orangeCoral} />
+        <Text style={styles.infoText}>{time}</Text>
+      </View>
+      <View style={styles.iconTextLine}>
+        <Icon name="people" color={CUSTOM_COLOURS.orangeCoral} />
+        <Text style={styles.infoText}>{`${assistants} assistiran`}</Text>
       </View>
     </View>
   );
@@ -25,30 +30,18 @@ export const InfoBox: React.FC<InfoBoxProps> = ({ assistants, city, time }) => {
 
 const styles = StyleSheet.create({
   infoBox: {
-    gap: 8,
+    gap: 4,
+    marginTop: 12,
     paddingHorizontal: 16,
   },
-  city: {
+  infoText: {
     color: COLORS.textColor,
-    fontSize: 20,
-    fontWeight: 800,
-    textAlign: "center",
+    fontSize: 12,
+    fontWeight: "500",
   },
-  time: {
-    color: COLORS.textColor,
-    fontSize: 14,
-    fontWeight: 800,
-    textAlign: "center",
-  },
-  assistantsBox: {
+  iconTextLine: {
     flexDirection: "row",
-    justifyContent: "center",
-    gap: 16,
-    marginTop: 16,
-  },
-  assistantText: {
-    color: COLORS.textColor,
-    fontSize: 14,
-    textAlign: "center",
+    alignItems: "center",
+    gap: 8,
   },
 });

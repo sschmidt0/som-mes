@@ -1,6 +1,6 @@
 import { Icon } from "@/components/atoms/icon";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
-import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
+import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
 import { useDrawerStore } from "@/store/drawer.store";
 import { Stack, useRouter } from "expo-router";
 
@@ -31,7 +31,7 @@ const StackLayout = () => {
             <Icon
               name={canGoBack ? "arrow-back-outline" : "menu-outline"}
               size={20}
-              color={CUSTOM_COLORS.primary900}
+              color={CUSTOM_COLOURS.darkBlue}
               onIconPress={() => onHeaderLeftClick(!!canGoBack)}
             />
           );

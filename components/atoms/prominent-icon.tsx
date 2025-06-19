@@ -1,4 +1,4 @@
-import { CUSTOM_COLORS } from "@/constants/Colors";
+import { CUSTOM_COLOURS } from "@/constants/Colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, View } from "react-native";
@@ -11,16 +11,16 @@ export interface ProminentIconProps {
 
 export const ProminentIcon: React.FC<ProminentIconProps> = ({
   name,
-  size = 80,
+  size = 40,
   invertColors = false,
 }) => {
   const boxSize = size + 2 * 16;
   const backgroundColor = invertColors
-    ? CUSTOM_COLORS.primary800
-    : CUSTOM_COLORS.primary100;
+    ? CUSTOM_COLOURS.darkBlue
+    : CUSTOM_COLOURS.lavenderGray;
   const iconColor = invertColors
-    ? CUSTOM_COLORS.primary100
-    : CUSTOM_COLORS.primary800;
+    ? CUSTOM_COLOURS.lavenderGray
+    : CUSTOM_COLOURS.darkBlue;
 
   return (
     <View
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 12,
     padding: 16,
-    backgroundColor: CUSTOM_COLORS.primary100,
+    backgroundColor: CUSTOM_COLOURS.lavenderBlue,
     borderRadius: "50%",
   },
 });

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     alignItems: "center",
-    gap: 12,
+    gap: 16,
     marginVertical: 8,
   },
 });

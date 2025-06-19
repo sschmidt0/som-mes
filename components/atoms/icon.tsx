@@ -11,7 +11,7 @@ export interface IconProps {
 export const Icon: React.FC<IconProps> = ({
   name,
   color,
-  size = 16,
+  size = 14,
   onIconPress,
 }) => {
   return (

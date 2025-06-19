@@ -1,6 +1,6 @@
 import { Icon } from "@/components/atoms/icon";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
-import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
+import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
 import { useDrawerStore } from "@/store/drawer.store";
 import { Tabs } from "expo-router";
 
@@ -13,16 +13,16 @@ const TabsLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: CUSTOM_COLORS.primary100,
-        tabBarInactiveTintColor: COLORS.background,
+        tabBarActiveTintColor: CUSTOM_COLOURS.darkBlue,
+        tabBarInactiveTintColor: CUSTOM_COLOURS.lavenderGray,
         tabBarStyle: {
-          backgroundColor: CUSTOM_COLORS.primary900,
+          backgroundColor: CUSTOM_COLOURS.lavenderBlue,
           borderTopWidth: 1,
-          borderTopColor: CUSTOM_COLORS.primary500,
+          borderTopColor: CUSTOM_COLOURS.lavenderBlue,
           height: 60,
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 9,
           fontWeight: "bold",
           textTransform: "uppercase",
         },
@@ -32,7 +32,7 @@ const TabsLayout = () => {
           <Icon
             name={"menu-outline"}
             size={20}
-            color={CUSTOM_COLORS.primary900}
+            color={CUSTOM_COLOURS.darkBlue}
             onIconPress={handleDrawerIconPress}
           />
         ),

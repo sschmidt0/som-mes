@@ -8,10 +8,7 @@ export interface CumstomMapProps {
   longitude?: number;
 }
 
-export const CustomMap: React.FC<CumstomMapProps> = ({
-  latitude = 41.3851,
-  longitude = 2.1734,
-}) => {
+export const CustomMap: React.FC<CumstomMapProps> = () => {
   const router = useRouter();
 
   const handleOnMapClick = () => {
@@ -34,7 +31,7 @@ export const CustomMap: React.FC<CumstomMapProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 240,
+    height: 180,
     borderRadius: 12,
     overflow: "hidden",
     marginVertical: 16,

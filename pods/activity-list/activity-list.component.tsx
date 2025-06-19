@@ -1,5 +1,5 @@
 import { ProminentIcon } from "@/components/atoms/prominent-icon";
-import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
+import { COLORS } from "@/constants/Colors";
 import { Category } from "@/core/models/categories.model";
 import { ACTIVITIES } from "@/db/example.data";
 import { useLocalSearchParams, useNavigation } from "expo-router";
@@ -33,9 +33,9 @@ export const ActivityListComponent = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.parentContainer}>
-      <Text style={styles.subtitle}>{category.shortText}</Text>
       <View style={styles.upperContainer}>
         <ProminentIcon name={category.icon} />
+        <Text style={styles.subtitle}>{category.shortText}</Text>
         <Text style={styles.description}>{category.longText}</Text>
       </View>
 
@@ -55,9 +55,6 @@ export const ActivityListComponent = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   parentContainer: {
     paddingHorizontal: 8,
     paddingVertical: 16,
@@ -66,12 +63,6 @@ const styles = StyleSheet.create({
   upperContainer: {
     alignItems: "center",
     marginBottom: 24,
-  },
-  icon: {
-    marginBottom: 12,
-    padding: 16,
-    backgroundColor: CUSTOM_COLORS.primary100,
-    borderRadius: "50%",
   },
   subtitle: {
     fontSize: 16,
@@ -85,34 +76,7 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   activitiesContainer: {
-    marginTop: 16,
-  },
-  quantity: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: CUSTOM_COLORS.primary900,
-    marginBottom: 12,
-  },
-  activityCard: {
-    backgroundColor: CUSTOM_COLORS.primary100,
-    padding: 16,
-    borderRadius: 8,
-    marginBottom: 12,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  activityTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: CUSTOM_COLORS.primary800,
-    marginBottom: 4,
-  },
-  activityDescription: {
-    fontSize: 14,
-    color: COLORS.textColor,
-    lineHeight: 20,
+    gap: 14,
+    marginBottom: 24,
   },
 });

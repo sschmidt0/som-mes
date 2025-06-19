@@ -1,9 +1,8 @@
-import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
+import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { Association } from "./components/association";
 import { CustomMap } from "./components/custom-map";
 import { InfoBox } from "./components/info-box";
 
@@ -23,14 +22,11 @@ export const ActivityDetailComponent: React.FC<Props> = () => {
     description: params.description || "No hi ha descripció disponible.",
   };
 
-  console.log(activity.description);
+  const isFromOrganization = !!activity.association;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View>
-        {!!activity?.association && (
-          <Association association={activity?.association} />
-        )}
         <CustomMap />
         <Text style={styles.title}>{activity.title}</Text>
 
@@ -39,9 +35,16 @@ export const ActivityDetailComponent: React.FC<Props> = () => {
           city={activity.city}
           time={activity.time}
         />
-        <View style={styles.descriptionBox}>
-          <Text style={styles.description}>{activity.description}</Text>
-        </View>
+
+        {isFromOrganization && (
+          <View>
+            <Text style={styles.label}>Organitzat per:</Text>
+            {/* TODO: add url to activity when association and convert to link */}
+            <Text style={styles.associationText}>{activity.association}</Text>
+          </View>
+        )}
+
+        <Text style={styles.description}>{activity.description}</Text>
       </View>
     </ScrollView>
   );
@@ -54,17 +57,24 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   title: {
-    marginBottom: 8,
-    color: CUSTOM_COLORS.primary900,
-    fontSize: 40,
+    marginVertical: 16,
+    color: CUSTOM_COLOURS.darkBlue,
+    fontSize: 20,
     fontWeight: 700,
     textAlign: "center",
   },
-  descriptionBox: {
-    marginTop: 16,
-    paddingHorizontal: 16,
+  label: {
+    marginTop: 24,
+    fontSize: 14,
+    fontStyle: "italic",
+  },
+  associationText: {
+    color: COLORS.textColor,
+    fontSize: 14,
+    fontWeight: 800,
   },
   description: {
+    marginTop: 28,
     color: COLORS.textColor,
     fontSize: 14,
     lineHeight: 24,

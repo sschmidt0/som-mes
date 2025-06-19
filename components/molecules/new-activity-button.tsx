@@ -1,4 +1,4 @@
-import { CUSTOM_COLORS } from "@/constants/Colors";
+import { CUSTOM_COLOURS } from "@/constants/Colors";
 import { useRouter } from "expo-router";
 import { Pressable } from "react-native";
 import { IconButton } from "../atoms/icon-button";
@@ -10,10 +10,8 @@ export const NewActivityButton = () => {
   };
 
   return (
-    // <Link href="/new-activity" asChild>
     <Pressable onPress={handlePress}>
-      <IconButton color={CUSTOM_COLORS.primary900} name="add" />
+      <IconButton color={CUSTOM_COLOURS.darkBlue} size={20} name="add" />
     </Pressable>
-    // </Link>
   );
 };

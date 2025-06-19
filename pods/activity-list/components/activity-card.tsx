@@ -1,4 +1,4 @@
-import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
+import { COLORS, CUSTOM_COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
 import { ActivityType } from "@/core/models/activity-list.model";
 import { formatDateTime } from "@/utils/helper/format-date-time";
 import { Link } from "expo-router";
@@ -42,11 +42,9 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
             </View>
           )}
         </View>
-        <Text style={styles.assistants}>{infoLine}</Text>
-        <Text>
-          {activity.description?.length > 100
-            ? `${activity.description.slice(0, 100)}...`
-            : activity.description}
+        <Text style={styles.infoline}>{infoLine}</Text>
+        <Text style={styles.description} numberOfLines={2} ellipsizeMode="tail">
+          {activity.description}
         </Text>
       </Pressable>
     </Link>
@@ -55,17 +53,22 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
 
 const styles = StyleSheet.create({
   container: {
-    gap: 4,
-    padding: 12,
-    marginVertical: 8,
-    borderRadius: 12,
+    gap: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    backgroundColor: CUSTOM_COLOURS.lavenderGray,
+    borderRadius: 16,
     borderWidth: 1,
-    borderColor: CUSTOM_COLORS.primary500,
-    shadowColor: COLORS.text,
+    borderColor: CUSTOM_COLOURS.softLavender,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
+  },
+  pressed: {
+    opacity: 0.4,
+    backgroundColor: CUSTOM_COLOURS.darkBlue,
   },
   textContainer: {
     flex: 1,
@@ -73,30 +76,33 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 800,
-    color: COLORS.text,
-    marginBottom: 4,
+    color: CUSTOM_COLOURS.darkBlue,
   },
   associationBox: {
+    position: "absolute",
+    right: -30,
+    top: -22,
     justifyContent: "center",
     alignItems: "center",
     width: "auto",
-    padding: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+    borderRadius: 10,
     backgroundColor: CUSTOM_COLORS.secondary300,
   },
   associationText: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "500",
     color: COLORS.text,
-    marginBottom: 4,
   },
-  assistants: {
-    marginBottom: 4,
+  infoline: {
+    marginTop: -6,
+    fontSize: 10,
+  },
+  description: {
+    marginBottom: 2,
     fontSize: 12,
-  },
-  pressed: {
-    opacity: 0.9,
-    backgroundColor: CUSTOM_COLORS.primary100,
   },
 });
