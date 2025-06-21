@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 const notifications = () => {
   return (
     <View>
-      <Text>Lorem ipsum NOTIFICACIONS</Text>
+      <Text>Les notificacions aquí</Text>
     </View>
   );
 };

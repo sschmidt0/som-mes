@@ -59,6 +59,13 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Perfil",
+          tabBarIcon: ({ color }) => <Icon name="person-sharp" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="(drawer)"
         options={{
           href: null,
