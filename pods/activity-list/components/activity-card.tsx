@@ -15,7 +15,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   return (
     <Link
       href={{
-        pathname: `/(tabs)/(drawer)/(stack)/activity/[id]`,
+        pathname: `./[id]`,
         params: {
           id: activity?.id,
           assistants: activity?.assistants,
