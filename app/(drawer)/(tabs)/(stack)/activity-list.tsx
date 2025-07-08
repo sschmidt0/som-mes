@@ -1,7 +1,7 @@
 import { ActivityListContainer } from "@/pods/activity-list";
 
-const ActivityList: React.FC = () => {
+const ActivityListScreen: React.FC = () => {
   return <ActivityListContainer />;
 };
 
-export default ActivityList;
+export default ActivityListScreen;

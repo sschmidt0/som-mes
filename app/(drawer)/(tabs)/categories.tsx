@@ -1,7 +1,7 @@
 import { CategoriesContainer } from "@/pods/categories";
 
-const categories = () => {
+const CategoriesScreen = () => {
   return <CategoriesContainer />;
 };
 
-export default categories;
+export default CategoriesScreen;

@@ -1,8 +1,8 @@
 import { ABOUT } from "@/db/informació/about";
 import { InfoComponent } from "@/pods/info/info.component";
 
-const About = () => {
+const AboutScreen = () => {
   return <InfoComponent texts={ABOUT} />;
 };
 
-export default About;
+export default AboutScreen;

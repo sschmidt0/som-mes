@@ -1,20 +1,13 @@
-import { Icon } from "@/components/atoms/icon";
+import { Icon } from "@/components";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
 import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
-import { useDrawerStore } from "@/store/drawer.store";
 import { Stack, useRouter } from "expo-router";
 
 const StackLayout = () => {
   const router = useRouter();
-  const { setIsOpen } = useDrawerStore();
 
-  const onHeaderLeftClick = (canGoBack: boolean) => {
-    if (canGoBack) {
-      router.back();
-      return;
-    }
-
-    setIsOpen(true);
+  const onHeaderLeftIconClick = () => {
+    router.back();
   };
 
   return (
@@ -25,14 +18,13 @@ const StackLayout = () => {
         contentStyle: {
           backgroundColor: COLORS.background,
         },
-        headerLeft: ({ canGoBack }) => {
-          console.log({ canGoBack });
+        headerLeft: () => {
           return (
             <Icon
-              name={canGoBack ? "arrow-back-outline" : "menu-outline"}
+              name="arrow-back-outline"
               size={20}
               color={CUSTOM_COLOURS.darkBlue}
-              onIconPress={() => onHeaderLeftClick(!!canGoBack)}
+              onIconPress={onHeaderLeftIconClick}
             />
           );
         },

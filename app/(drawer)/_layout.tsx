@@ -1,3 +1,4 @@
+import { CustomDrawer } from "@/components";
 import { Icon } from "@/components/atoms/icon";
 import { COLORS, CUSTOM_COLORS } from "@/constants/Colors";
 import { Drawer } from "expo-router/drawer";
@@ -5,7 +6,7 @@ import { Drawer } from "expo-router/drawer";
 const DrawerLayout = () => {
   return (
     <Drawer
-      // drawerContent={CustomDrawer}
+      drawerContent={CustomDrawer}
       screenOptions={{
         headerShown: false,
         overlayColor: COLORS.overlayColor,
@@ -32,22 +33,6 @@ const DrawerLayout = () => {
           drawerLabel: "Per què l'app Som +",
           title: "Per què l'app Som +",
           drawerIcon: ({ color }) => <Icon name="bulb-outline" color={color} />,
-        }}
-      />
-      <Drawer.Screen
-        name="profile"
-        options={{
-          drawerLabel: "Profil",
-          title: "Profil",
-          drawerIcon: ({ color }) => (
-            <Icon name="person-outline" color={color} />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="(stack)"
-        options={{
-          drawerLabel: () => null,
         }}
       />
     </Drawer>

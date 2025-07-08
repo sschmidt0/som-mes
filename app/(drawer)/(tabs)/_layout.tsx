@@ -66,9 +66,10 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="(drawer)"
+        name="(stack)"
         options={{
           href: null,
+          tabBarStyle: { display: "none" },
           headerShown: false,
         }}
       />

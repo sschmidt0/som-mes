@@ -1,4 +1,3 @@
-import { NewActivityButton } from "@/components";
 import CheckMapsPermissionsProvider from "@/core/providers/check-maps-permissions.provider";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
@@ -27,14 +26,6 @@ export default function RootLayout() {
       <CheckMapsPermissionsProvider>
         <Stack>
           <Stack.Screen
-            name="(tabs)"
-            options={{
-              title: "Categories",
-              headerShown: false,
-              headerRight: () => <NewActivityButton />,
-            }}
-          />
-          <Stack.Screen
             name="new-activity"
             options={{
               headerShown: false,
@@ -42,7 +33,20 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
+            name="permissions"
+            options={{
+              headerShown: false,
+              presentation: "modal",
+            }}
+          />
+          <Stack.Screen
             name="map"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="(drawer)"
             options={{
               headerShown: false,
             }}
