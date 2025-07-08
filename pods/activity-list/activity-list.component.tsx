@@ -4,7 +4,13 @@ import { Category } from "@/core/models/categories.model";
 import { ACTIVITIES } from "@/db/example.data";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { ActivityCard } from "./components/activity-card";
 import { NoActivity } from "./components/no-activity";
 
@@ -19,6 +25,16 @@ export const ActivityListComponent = () => {
     title: params.title,
   } as Category;
 
+  const [isRefreshing, setIsRefreshing] = React.useState(false);
+
+  const onRefresh = async () => {
+    setIsRefreshing(true);
+    // Simulate a network request
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, 2000);
+  };
+
   const filteredActivities = ACTIVITIES.filter(
     (activity) => activity.icon === category.id
   );
@@ -32,7 +48,12 @@ export const ActivityListComponent = () => {
   }, [navigation, category.title]);
 
   return (
-    <ScrollView contentContainerStyle={styles.parentContainer}>
+    <ScrollView
+      contentContainerStyle={styles.parentContainer}
+      refreshControl={
+        <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
+      }
+    >
       <View style={styles.upperContainer}>
         <ProminentIcon name={category.icon} />
         <Text style={styles.subtitle}>{category.shortText}</Text>
