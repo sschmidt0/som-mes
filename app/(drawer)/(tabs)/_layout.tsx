@@ -1,13 +1,14 @@
 import { Icon } from "@/components/atoms/icon";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
 import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
-import { useDrawerStore } from "@/store/drawer.store";
-import { Tabs } from "expo-router";
+import { DrawerActions } from "@react-navigation/native";
+import { Tabs, useNavigation } from "expo-router";
 
 const TabsLayout = () => {
-  const { setIsOpen } = useDrawerStore();
-  const handleDrawerIconPress = () => {
-    setIsOpen(true);
+  const navigation = useNavigation();
+
+  const onMenuIconPress = () => {
+    navigation.dispatch(DrawerActions.toggleDrawer);
   };
 
   return (
@@ -33,7 +34,7 @@ const TabsLayout = () => {
             name={"menu-outline"}
             size={20}
             color={CUSTOM_COLOURS.darkBlue}
-            onIconPress={handleDrawerIconPress}
+            onIconPress={onMenuIconPress}
           />
         ),
         sceneStyle: {

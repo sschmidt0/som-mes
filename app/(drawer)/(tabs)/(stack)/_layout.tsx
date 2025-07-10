@@ -1,13 +1,19 @@
 import { Icon } from "@/components";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
 import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
-import { Stack, useRouter } from "expo-router";
+import { DrawerActions } from "@react-navigation/native";
+import { Stack, useNavigation, useRouter } from "expo-router";
 
 const StackLayout = () => {
   const router = useRouter();
+  const navigation = useNavigation();
 
-  const onHeaderLeftIconClick = () => {
+  const onHeaderArrowIconClick = () => {
     router.back();
+  };
+
+  const onHeaderMenuIconClick = () => {
+    navigation.dispatch(DrawerActions.openDrawer);
   };
 
   return (
@@ -24,7 +30,7 @@ const StackLayout = () => {
               name="arrow-back-outline"
               size={20}
               color={CUSTOM_COLOURS.darkBlue}
-              onIconPress={onHeaderLeftIconClick}
+              onIconPress={onHeaderArrowIconClick}
             />
           );
         },
@@ -35,6 +41,34 @@ const StackLayout = () => {
         options={{
           title: "Activity List",
           headerRight: () => <NewActivityButton />,
+        }}
+      />
+      <Stack.Screen
+        name="about"
+        options={{
+          title: "",
+          headerLeft: () => (
+            <Icon
+              name="menu-outline"
+              color={CUSTOM_COLOURS.darkBlue}
+              size={16}
+              onIconPress={onHeaderMenuIconClick}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="objectives"
+        options={{
+          title: "",
+          headerLeft: () => (
+            <Icon
+              name="menu-outline"
+              color={CUSTOM_COLOURS.darkBlue}
+              size={16}
+              onIconPress={onHeaderMenuIconClick}
+            />
+          ),
         }}
       />
     </Stack>
