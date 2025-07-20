@@ -32,7 +32,13 @@ export const InfoComponent: React.FC<InfoComponentProps> = ({
                   />
                 )}
                 {text.content.map((paragraph) => (
-                  <Text key={paragraph.id} style={styles.text}>
+                  <Text
+                    key={paragraph.id}
+                    style={[
+                      styles.text,
+                      paragraph.isSignature && styles.signature,
+                    ]}
+                  >
                     {paragraph.text}
                   </Text>
                 ))}
@@ -69,5 +75,11 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: COLORS.textColor,
     textAlign: "justify",
+  },
+  signature: {
+    fontSize: 18,
+    fontWeight: "bold",
+    fontStyle: "italic",
+    color: COLORS.textColor,
   },
 });

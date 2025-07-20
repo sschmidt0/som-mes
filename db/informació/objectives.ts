@@ -11,39 +11,31 @@ export const OBJECTIVES: ITEM[] = [
       },
       {
         id: "p2",
-        text: "Amb la meva experiència en educació, comunicació i desenvolupament web, he volgut crear una plataforma tecnològica amb valors socials, centrada en les persones. Una eina senzilla i acollidora on tothom pugui trobar activitats properes, fer nous contactes, i sentir-se part d’un col·lectiu.",
+        text: "Amb la meva experiència en educació i desenvolupament web, he volgut crear una plataforma tecnològica amb valors socials, centrada en les persones. Una eina senzilla i acollidora on tothom pugui trobar activitats properes, fer nous contactes, i sentir-se part d’un col·lectiu.",
       },
       {
         id: "p3",
-        text: "La situació actual - soledat no desitjada",
+        text: "Aquesta aplicació no és només una altra xarxa social: és una eina per trencar la soledat i fomentar la inclusió, posant l'accent en la proximitat, les relacions humanes i la diversitat. Connecta persones de totes les edats, orígens, sexes i creences, a través d’activitats compartides i trobades en persona.",
       },
       {
         id: "p4",
-        text: "La soledat no desitjada és un problema creixent a Catalunya, afectant a persones de totes les edats. La pandèmia de la COVID-19 ha accentuat aquesta situació, deixant moltes persones amb sentiments d'aïllament i desconexió social. La nostra app busca abordar aquesta problemàtica, oferint una plataforma per connectar persones i fomentar la interacció social.",
+        text: "La soledat és un problema real i creixent. A Barcelona, unes 70.000 persones (4,2 %) afirmen sentir-se soles sovint o molt sovint, segons l’enquesta municipal Òmnibus (Ajuntament de Barcelona, 2023). I a tot Catalunya, gairebé una de cada cinc persones adultes (18,4 %) pateix soledat no desitjada, segons el Baròmetre de la Soledat 2024 de Fundació ONCE i AXA.",
       },
       {
         id: "p5",
-        text: "A Catalunya, un 20% de la població es considera sola, i aquest percentatge augmenta entre les persones grans. La soledat no desitjada pot tenir conseqüències greus per a la salut física i mental, incloent-hi l'augment del risc de depressió, ansietat i altres problemes de salut. La nostra app vol ser una solució per a aquesta problemàtica, facilitant la connexió entre persones i promovent activitats que fomentin la interacció social.",
+        text: "La pandèmia de la COVID-19 ha accentuat aquesta situació, deixant moltes persones amb sentiments d'aïllament i desconexió social. A més, la tecnologia i les xarxes socials, tot i tenir un gran potencial de connexió, sovint reforcen la desconnexió real entre persones. Un exemple clar va ser l'apagada elèctrica del dilluns 28 d'abril de 2025, quan molts veïns i veïnes de Barcelona van sortir al carrer i van conversar entre ells, aprofitant l'absència de dispositius electrònics.",
       },
       {
         id: "p6",
-        text: "A més, la soledat no desitjada afecta a persones de totes les edats i orígens. La nostra app vol ser una eina inclusiva, que permeti a tothom trobar activitats i persones amb interessos similars, independentment de la seva edat o situació personal. Volem fomentar una comunitat activa i inclusiva, on tothom pugui sentir-se benvingut i connectat amb els altres.",
+        text: "Som + vol ser una resposta propera, empàtica i pràctica. A través d'activitats comunitàries, volem facilitar trobades en persona i fomentar el sentiment de pertinença. Aquesta aplicació vol donar visibilitat i eines a persones que potser no tenen una xarxa de suport a prop, promovent una comunitat real i activa.",
       },
       {
         id: "p7",
-        text: "​Durant l'apagada elèctrica del dilluns 28 d'abril de 2025, molts veïns i veïnes de Barcelona van sortir al carrer i van conversar entre ells, aprofitant l'absència de dispositius electrònics. Aquest esdeveniment va posar de manifest com la tecnologia, tot i connectar-nos virtualment, pot contribuir a l'aïllament social.",
+        text: "Malgrat els programes existents com 'Barcelona contra la soledat', amb 135 accions impulsades pel consistori entre 2020 i 2024, calen més iniciatives que arribin de manera directa i natural a la ciutadania. Som + neix per omplir aquest buit amb una eina senzilla, inclusiva i centrada en les persones.",
       },
       {
         id: "p8",
-        text: "Segons dades de l'enquesta Òmnibus de l'Ajuntament de Barcelona, més de 90.000 persones se senten soles a la ciutat. Aquest sentiment afecta especialment els joves, amb un 28,4% dels joves d'entre 18 i 34 anys que es declaren afectats per la soledat no desitjada.",
-      },
-      {
-        id: "p9",
-        text: "Per combatre aquesta problemàtica, l'Ajuntament ha impulsat l'estratègia municipal 'Barcelona contra la soledat' amb un pla d'accions 2020-2024 que inclou 135 iniciatives, de les quals s'han executat un 92%.​",
-      },
-      {
-        id: "p10",
-        text: "L'app Som + s'alinea amb aquesta estratègia, oferint una plataforma per connectar persones i fomentar la participació en activitats comunitàries, contribuint així a reduir la soledat no desitjada a la ciutat.",
+        text: "La soledat no desitjada pot tenir conseqüències greus per a la salut física i mental, incloent-hi l'augment del risc de depressió, ansietat i altres problemes de salut. Per això, l'app Som + vol contribuir a revertir aquesta tendència, facilitant la connexió entre persones i promovent activitats que fomentin la interacció social i l’acompanyament.",
       },
     ],
   },

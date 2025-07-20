@@ -7,4 +7,5 @@ export type ITEM = {
 interface TextItem {
   id: string;
   text: string;
+  isSignature?: boolean;
 }
