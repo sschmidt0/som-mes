@@ -16,4 +16,8 @@ export interface ActivityType {
   time: Date;
   title: string;
   description: string;
+  place: {
+    latitude: number;
+    longitude: number;
+  };
 }

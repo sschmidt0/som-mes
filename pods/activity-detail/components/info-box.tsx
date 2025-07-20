@@ -4,8 +4,8 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 export interface InfoBoxProps {
-  time: string;
-  assistants: string;
+  time: Date;
+  assistants: number;
   city: string;
 }
 
@@ -18,7 +18,7 @@ export const InfoBox: React.FC<InfoBoxProps> = ({ assistants, city, time }) => {
       </View>
       <View style={styles.iconTextLine}>
         <Icon name="calendar" color={CUSTOM_COLOURS.orangeCoral} />
-        <Text style={styles.infoText}>{time}</Text>
+        <Text style={styles.infoText}>{time.toString()}</Text>
       </View>
       <View style={styles.iconTextLine}>
         <Icon name="people" color={CUSTOM_COLOURS.orangeCoral} />

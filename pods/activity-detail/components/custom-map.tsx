@@ -1,18 +1,24 @@
-import { barcelonaRegion } from "@/core/initial-region";
+import { ActivityType } from "@/core/models";
 import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, View } from "react-native";
 import MapView from "react-native-maps";
 
-export interface CumstomMapProps {
-  latitude?: number;
-  longitude?: number;
+export interface CustomMapProps {
+  activity: ActivityType;
 }
 
-export const CustomMap: React.FC<CumstomMapProps> = () => {
+export const CustomMap: React.FC<CustomMapProps> = ({ activity }) => {
   const router = useRouter();
 
   const handleOnMapClick = () => {
-    router.push("/map");
+    router.push({
+      pathname: "/map",
+      params: {
+        latitude: activity.place.latitude,
+        longitude: activity.place.longitude,
+        title: activity.title,
+      },
+    });
   };
 
   return (
@@ -21,7 +27,12 @@ export const CustomMap: React.FC<CumstomMapProps> = () => {
         <MapView
           style={styles.map}
           provider="google"
-          initialRegion={barcelonaRegion}
+          initialRegion={{
+            latitude: activity.place.latitude,
+            longitude: activity.place.longitude,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+          }}
         />
       </Pressable>
     </View>

@@ -26,6 +26,8 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           time: formatDateTime(activity?.time),
           title: activity?.title,
           description: activity?.description,
+          latitude: activity?.place?.latitude,
+          longitude: activity?.place?.longitude,
         },
       }}
       asChild
