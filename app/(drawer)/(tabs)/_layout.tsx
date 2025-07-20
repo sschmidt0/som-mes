@@ -74,6 +74,26 @@ const TabsLayout = () => {
           headerShown: false,
         }}
       />
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: "",
+          href: null,
+          tabBarStyle: { display: "none" },
+          headerShown: true,
+          headerRight: () => null,
+        }}
+      />
+      <Tabs.Screen
+        name="objectives"
+        options={{
+          title: "",
+          href: null,
+          tabBarStyle: { display: "none" },
+          headerShown: true,
+          headerRight: () => null,
+        }}
+      />
     </Tabs>
   );
 };

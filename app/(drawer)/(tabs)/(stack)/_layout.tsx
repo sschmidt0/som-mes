@@ -43,34 +43,6 @@ const StackLayout = () => {
           headerRight: () => <NewActivityButton />,
         }}
       />
-      <Stack.Screen
-        name="about"
-        options={{
-          title: "",
-          headerLeft: () => (
-            <Icon
-              name="menu-outline"
-              color={CUSTOM_COLOURS.darkBlue}
-              size={16}
-              onIconPress={onHeaderMenuIconClick}
-            />
-          ),
-        }}
-      />
-      <Stack.Screen
-        name="objectives"
-        options={{
-          title: "",
-          headerLeft: () => (
-            <Icon
-              name="menu-outline"
-              color={CUSTOM_COLOURS.darkBlue}
-              size={16}
-              onIconPress={onHeaderMenuIconClick}
-            />
-          ),
-        }}
-      />
     </Stack>
   );
 };

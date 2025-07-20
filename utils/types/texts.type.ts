@@ -1,5 +1,10 @@
 export type ITEM = {
   id: number;
-  isTitle: boolean;
-  content: string;
+  title: string;
+  content: TextItem[];
 };
+
+interface TextItem {
+  id: string;
+  text: string;
+}

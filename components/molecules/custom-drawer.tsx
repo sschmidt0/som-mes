@@ -4,18 +4,15 @@ import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
 } from "@react-navigation/drawer";
-import { DrawerActions } from "@react-navigation/native";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { DrawerItem } from "../atoms/drawer-item";
 
 export const CustomDrawer = (props: DrawerContentComponentProps) => {
   const router = useRouter();
-  const navigation = useNavigation();
 
   const handlePress = (path: string) => {
     router.push(`/${path}`);
-    navigation.dispatch(DrawerActions.closeDrawer);
   };
 
   return (
