@@ -9,7 +9,7 @@ const MapScreen = () => {
       <MapView
         style={styles.map}
         initialRegion={barcelonaRegion}
-        showsPointsOfInterest={false}
+        showsPointsOfInterest={true}
         showsMyLocationButton={true}
         showsCompass={true}
         showsScale={true}

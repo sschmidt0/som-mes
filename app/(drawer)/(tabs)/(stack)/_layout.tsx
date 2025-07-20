@@ -1,19 +1,13 @@
 import { Icon } from "@/components";
 import { NewActivityButton } from "@/components/molecules/new-activity-button";
 import { COLORS, CUSTOM_COLOURS } from "@/constants/Colors";
-import { DrawerActions } from "@react-navigation/native";
-import { Stack, useNavigation, useRouter } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 
 const StackLayout = () => {
   const router = useRouter();
-  const navigation = useNavigation();
 
   const onHeaderArrowIconClick = () => {
     router.back();
-  };
-
-  const onHeaderMenuIconClick = () => {
-    navigation.dispatch(DrawerActions.openDrawer);
   };
 
   return (
