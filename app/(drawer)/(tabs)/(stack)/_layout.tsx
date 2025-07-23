@@ -21,7 +21,7 @@ const StackLayout = () => {
         headerLeft: () => {
           return (
             <Icon
-              name="arrow-back-outline"
+              name="chevron-back-outline"
               size={20}
               color={CUSTOM_COLOURS.darkBlue}
               onIconPress={onHeaderArrowIconClick}

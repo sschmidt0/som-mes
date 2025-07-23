@@ -4,13 +4,13 @@ import React from "react";
 export interface IconProps {
   size?: number;
   name: keyof typeof Ionicons.glyphMap;
-  color: string;
+  color?: string;
   onIconPress?: () => void;
 }
 
 export const Icon: React.FC<IconProps> = ({
   name,
-  color,
+  color = "black",
   size = 14,
   onIconPress,
 }) => {
